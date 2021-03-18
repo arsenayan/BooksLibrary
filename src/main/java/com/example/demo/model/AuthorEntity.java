@@ -24,7 +24,8 @@ import java.util.List;
 @SelectBeforeUpdate
 @EqualsAndHashCode
 @Setter @Getter
-public class Author {
+public class AuthorEntity
+{
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -36,9 +37,9 @@ public class Author {
 
     @Basic(fetch = FetchType.LAZY)
     @OneToMany(mappedBy = "author")
-    private List<Book> books;
+    private List<BookEntity> bookEntities;
 
-    public Author() {
+    public AuthorEntity() {
     }
 
     @Override

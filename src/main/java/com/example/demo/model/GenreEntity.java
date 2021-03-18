@@ -16,7 +16,8 @@ import java.util.List;
 @EqualsAndHashCode
 @Setter @Getter
 
-public class Genre {
+public class GenreEntity
+{
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
      @Id
@@ -26,6 +27,6 @@ public class Genre {
 
     @Basic(fetch = FetchType.LAZY)
     @OneToMany(mappedBy = "genre")
-    private List<Book> books;
+    private List<BookEntity> bookEntities;
 
 }

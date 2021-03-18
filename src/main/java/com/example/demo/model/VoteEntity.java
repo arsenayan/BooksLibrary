@@ -20,7 +20,8 @@ import java.util.Date;
 @EqualsAndHashCode
 @Setter
 @Getter
-public class Vote {
+public class VoteEntity
+{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;

@@ -16,31 +16,32 @@ import javax.persistence.*;
 @SelectBeforeUpdate
 @Setter @Getter
 @EqualsAndHashCode(of = "id")
-public class Book {
+public class BookEntity
+{
 
-    public Book() {
+    public BookEntity() {
     }
 
-    public Book(Long id, String name, Integer pageCount, String isbn, Genre genre,
-                Author author, Publisher publisher, Integer publishYear, byte[] image,
-                String descr, long viewCount, long totalRating, long totalVoteCount, int avgRating) {
-        this.id = id;
-        this.name = name;
-        this.pageCount = pageCount;
-        this.isbn = isbn;
-        this.genre = genre;
-        this.author = author;
-        this.publisher = publisher;
-        this.publishYear = publishYear;
-        this.image = image;
-        this.descr = descr;
-        this.viewCount = viewCount;
-        this.totalRating = totalRating;
-        this.totalVoteCount=totalVoteCount;
-        this.avgRating = avgRating;
+    public BookEntity(Long id, String name, Integer pageCount, String isbn, GenreEntity genreEntity,
+					  AuthorEntity authorEntity, PublisherEntity publisherEntity, Integer publishYear, byte[] image,
+					  String descr, long viewCount, long totalRating, long totalVoteCount, int avgRating) {
+		this.id              = id;
+		this.name            = name;
+		this.pageCount       = pageCount;
+		this.isbn            = isbn;
+		this.genreEntity     = genreEntity;
+		this.authorEntity    = authorEntity;
+		this.publisherEntity = publisherEntity;
+		this.publishYear     = publishYear;
+		this.image           = image;
+		this.descr           = descr;
+		this.viewCount       = viewCount;
+		this.totalRating     = totalRating;
+		this.totalVoteCount  = totalVoteCount;
+		this.avgRating       = avgRating;
     }
 
-    public Book(Long id, byte[] image) {
+    public BookEntity(Long id, byte[] image) {
         this.id = id;
         this.image = image;
 
@@ -66,15 +67,15 @@ public class Book {
 
     @ManyToOne
     @JoinColumn
-    private Genre genre;
+    private GenreEntity genreEntity;
 
     @ManyToOne
     @JoinColumn
-    private Author author;
+    private AuthorEntity authorEntity;
 
     @ManyToOne
     @JoinColumn
-    private Publisher publisher;
+    private PublisherEntity publisherEntity;
 
 
 

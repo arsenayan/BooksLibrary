@@ -19,7 +19,8 @@ import java.util.List;
 @EqualsAndHashCode
 @Setter
 @Getter
-public class Publisher {
+public class PublisherEntity
+{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
@@ -28,5 +29,5 @@ public class Publisher {
 
     @Basic(fetch = FetchType.LAZY)
     @OneToMany(mappedBy = "publisher")
-    private List<Book> books;
+    private List<BookEntity> bookEntities;
 }
